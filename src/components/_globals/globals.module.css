@@ -1,0 +1,80 @@
+.sidebar{
+    height: 100vh;
+    background-color: #202029;
+    transition: all 0.2s;
+    
+    .logo{
+        height: 60px;
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+        background-color: #202029;
+        padding-left: 20px
+    };
+
+    .containerLinks{
+        width: 100%;
+        height: 100%;
+        background-color: #202029;
+        display: flex;
+        flex-direction: column;      
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0px 5px;
+        transition: all 0.1s;
+        margin-top: 30px;
+
+        .a{
+            text-decoration: none;
+            font-size: 15px;
+            padding: 10px 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            transition: all 0.1s;
+            box-sizing: border-box;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .a:hover{
+            background-color: #76ce6e;
+        }
+    }
+} 
+
+.header{
+    background-color: #1f1f26;
+
+    width:100%;
+    height:55px;
+    padding:0 20px;
+
+    border-left:1px solid black;
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .dropDown_title_box{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+    }
+    
+    .header_icon{
+        margin-right:20px;
+        cursor:pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .logout{
+        cursor:pointer;
+        font-size: 15px;
+    }
+}
+

@@ -1,0 +1,15 @@
+.component{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+
+}
+
+.component:hover{
+    background: rgba(218, 47, 47, 0.811);
+}
