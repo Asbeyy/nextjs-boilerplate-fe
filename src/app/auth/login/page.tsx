@@ -159,6 +159,7 @@ export default function Home() {
               { type: 'regex', value: new RegExp('[!@#$%^&*(),.?":{}|<>]'), message: 'password must contain one special character' }
             ]}
           />
+          <br />
           {
             password.length >= 8 &&
             email !== '' &&

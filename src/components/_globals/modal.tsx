@@ -6,15 +6,18 @@ interface ModalProps {
     isOpen: boolean
     onClose: () => void
     children: React.ReactNode
+    width?: any
 }
 
-function Modal({ isOpen, onClose, children }: ModalProps) {
+function Modal({ isOpen, onClose, children, width }: ModalProps) {
 
     const initialPosition = {
+            width: width ? `${width}` : '700px',
         transform: 'translateY(30px)',
         opacity: 0
     }
     const finalPosition = {
+        width: width ? `${width}` : '700px',
         transform: 'translateY(0px)',
         opacity: 1
     }

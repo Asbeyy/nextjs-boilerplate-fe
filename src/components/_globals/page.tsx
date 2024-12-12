@@ -10,11 +10,12 @@ interface Props {
 
 
 function Page({ children }: Props) {
+    
 
     return (
         <div className={styles.pageComponent}>
             <Sidebar/>
-            <div className={styles.containerPage} style={{paddingRight: '15px', paddingBottom: '15px', paddingLeft: '15px'}}>
+            <div className={styles.containerPage} style={{paddingRight: '15px', paddingBottom: '15px', paddingLeft: '0px'}}>
                 <div className={styles.cardPage}>
                     {children}
                 </div>

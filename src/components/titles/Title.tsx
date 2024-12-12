@@ -1,9 +1,9 @@
 import { Plus } from 'lucide-react'
 import styles from './title.module.css'
-import React from 'react'
+import React, { act } from 'react'
 
 
-function Title(props: { title: string, subtitle?: string, buttonPlus?: boolean, onClick?: () => void, isLoading?: boolean, textColor?: string }) {
+function Title(props: { title: string, subtitle?: string, actionRight?: React.ReactNode , onClick?: () => void, isLoading?: boolean, textColor?: string }) {
 
 
     if (props.isLoading) {
@@ -13,12 +13,12 @@ function Title(props: { title: string, subtitle?: string, buttonPlus?: boolean, 
                     <p className={styles.titleSkeleton}>&nbsp;</p>
                     {
                         props.subtitle &&
-                        <p className={styles.subtitle}>{props.subtitle}</p>
+                        <p className={styles.subtitleSkeleton}>&nbsp;</p>
                     }
                 </div>
                 {
-                    props.buttonPlus &&
-                    <Plus width={18} />
+                    props.actionRight &&
+                    props.actionRight
                 }
             </div>
         )
@@ -42,8 +42,8 @@ function Title(props: { title: string, subtitle?: string, buttonPlus?: boolean, 
                 }
             </div>
             {
-                props.buttonPlus &&
-                <p>+</p>
+                props.actionRight &&
+                props.actionRight
             }
         </div>
     )

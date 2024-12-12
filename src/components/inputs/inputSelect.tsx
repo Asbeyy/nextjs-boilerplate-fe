@@ -43,7 +43,7 @@ function InputSelect({ options, placeholder, onSelect, style, value, label }: In
                 {
                     value !== "" ?
                         <div>{selected}</div> :
-                        <div>{placeholder}</div>
+                        <div style={{color: '#ffffff80'}}>{placeholder}</div>
                 }
                 <ChevronDownIcon style={{ width: '20px' }} />
                 {
