@@ -1,0 +1,9 @@
+.tag{
+    padding: .5rem 1rem;
+    border-radius: 20px;
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    color: var(--text-secondary);
+    background-color: var(--status-background);
+}

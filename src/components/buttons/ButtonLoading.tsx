@@ -2,13 +2,13 @@
 
 import React, { useState } from 'react'
 import style from './button.module.css'
-import Loader1 from '../loaders/Loader1'
+import LoaderWhite from '../loaders/LoaderWhite'
 
 interface ButtonProps {
     onClick: () => any
     color: string
     backgroundColor: string
-    text: string
+    text: any
     deactive?: boolean
 }
 
@@ -35,10 +35,12 @@ function ButtonLoading({onClick, color,backgroundColor, text, deactive}: ButtonP
         className={style.component}
         style={{
           background: backgroundColor, 
+          opacity: deactive ? '.3' : '1',
           color: color,
-          cursor: !isLoading ? 'pointer' : 'not-allowed',
+          cursor: !isLoading || deactive ? 'pointer' : 'not-allowed',
           pointerEvents: deactive ? 'none' : 'auto'
         }}
+        aria-disabled={deactive}
         onClick={()=>{
           !isLoading ?
           handleClick() :
@@ -48,7 +50,7 @@ function ButtonLoading({onClick, color,backgroundColor, text, deactive}: ButtonP
       {
         !isLoading ?
         text :
-        <Loader1/>
+        <LoaderWhite/>
       }
     </div>
   )

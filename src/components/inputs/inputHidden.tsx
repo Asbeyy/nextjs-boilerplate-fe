@@ -97,11 +97,14 @@ function InputHidden(
                 }}
             />
             {
+                props.value.length > 0 &&
                 !visible ?
                 <EyeIcon
                     className={style.icon}
                     onClick={toggleVisible}
                 /> :
+                props.value.length > 0 &&
+                visible &&
                 <EyeSlashIcon
                     className={style.icon}
                     onClick={toggleVisible}

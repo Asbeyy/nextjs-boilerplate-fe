@@ -1,17 +1,49 @@
 /* HTML: <div class="loader"></div> */
 .loader {
-    width: 20px;
-    padding: 4px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: #25b09b;
-    --_m: 
-      conic-gradient(#0000 10%,#000),
-      linear-gradient(#000 0 0) content-box;
-    -webkit-mask: var(--_m);
-            mask: var(--_m);
-    -webkit-mask-composite: source-out;
-            mask-composite: subtract;
-    animation: l3 1s infinite linear;
-  }
-  @keyframes l3 {to{transform: rotate(1turn)}}
+        width: 20px;
+        padding: 4px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: #b8e603;
+        --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+        -webkit-mask: var(--_m);
+        mask: var(--_m);
+        -webkit-mask-composite: source-out;
+        mask-composite: subtract;
+        animation: l3 1s infinite linear;
+}
+
+.loader2 {
+        width: 20px;
+        padding: 2px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: #ffffffb7;
+        --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+        -webkit-mask: var(--_m);
+        mask: var(--_m);
+        -webkit-mask-composite: source-out;
+        mask-composite: subtract;
+        animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+        to {
+                transform: rotate(1turn);
+        }
+}
+
+.skeleton_loader {
+        background: linear-gradient(45deg, #1f1f2696 25%, #ffffff0a 50%, #1f1f2696 75%);
+        background-size: 200% 100%;
+        animation: shimmer 2.5s infinite;
+        border-radius: 20px; /* Optional: for rounded edges */
+}
+
+@keyframes shimmer {
+        0% {
+                background-position: 200% 0;
+        }
+        100% {
+                background-position: -200% 0;
+        }
+}

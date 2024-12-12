@@ -32,9 +32,31 @@ export const register = async (name: string, surname: string, email: string, pas
     
     return await response.json();
 }
+export const sendVerificationEmail = async (email: string) => {
+  const response = await fetch(`${API_URL}/account/verify/send`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email }),
+  });
+
+  return await response.json();
+}
+export const verifyEmail = async (email: string, token: string) => {
+  const response = await fetch(`${API_URL}/account/verify`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, token }),
+  });
+
+  return await response.json();
+}
 export const logout = () => {
   localStorage.removeItem(String(process.env.NEXT_PUBLIC_PLATFORM_TOKEN_NAME));
-  location.href = '/';
+  location.href = '/auth/login';
 }
 export const authenticate = async () => {
   const token = getToken();
@@ -54,31 +76,3 @@ export const authenticate = async () => {
 }
 
 
-//SEARCH COMPONENT
-export const search = async (searchParam: string, searchPathApi: string) => {
-  
-  const response = await fetch(`${API_URL}/search/${searchPathApi}/parameter/${searchParam}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${getToken()}`, 
-    }
-  });
-
-  return await response.json();
-}
-
-export const searchAll = async (searchPathApi: string) => {
-  
-  const response = await fetch(`${API_URL}/search/${searchPathApi}/all`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${getToken()}`, 
-    }
-  });
-
-  console.log(response)
-
-  return await response.json();
-}

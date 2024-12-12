@@ -1,41 +1,153 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './globals.module.css'
-/*import Link from 'next/link' */
-import NavLinkItem from './navLinkItem/navLinkItem'
+import Link from 'next/link'
+import { FolderKanban, Home, ListTodo, LogOut, PanelsTopLeft, Settings, Tags, Users, Users2, Users2Icon } from 'lucide-react'
 
-interface SidebarProps {
-  isOpen: boolean
-}
+import { logout } from '@/services/api'
+import { on } from 'events'
+import { AuthContext } from '../_context/AuthContext'
 
-function Sidebar({ isOpen }: SidebarProps) {
+
+function Sidebar() {
+  const {isSidepanelOpen,role} = useContext(AuthContext)
+
+  //Handlers
+  const handleLogout = () => {
+    logout()
+  }
 
   return (
     <div
       className={styles.sidebar}
       style={{
-        width: isOpen ? '250px' : '0px'
+        width: isSidepanelOpen ? '250px' : '40px'
       }}
     >
-      <a className={styles.logo} href='/dashboard'>
-        <img src={process.env.NEXT_PUBLIC_PLATFORM_LOGO} style={{height: '50px'}} alt="" />
-      </a>
 
-      {
-        isOpen &&
-        <div
-          className={styles.containerLinks}
-          style={{
-            color: isOpen ? 'white' : 'transparent',
-          }}
-        >
-          <a className={styles.a} href="">Home</a>
-          <a className={styles.a} href="">Users</a>
-          <a className={styles.a} href="">Settings</a>
+
+      <div
+        className={styles.containerLinks}
+      >
+        {/* Top Elements */}
+        <div>
+          <ElementSidebar
+            icon={<PanelsTopLeft width={18} />}
+            text="dashboard"
+            isOpen={isSidepanelOpen}
+            href="/dashboard"
+            textStyle={{
+              fontWeight: 500,
+              textTransform: 'uppercase'
+            }}
+          />
+          <br />
+          <ElementSidebar
+            icon={<Users width={18} />}
+            text="Users"
+            isOpen={isSidepanelOpen}
+            href="/dashboard/users"
+          />
+          <ElementSidebar
+            icon={<ListTodo width={18} />}
+            text="Tasks"
+            isOpen={isSidepanelOpen}
+            href="/dashboard"
+          />
+          <ElementSidebar
+            icon={<Tags width={18} />}
+            text="Leads"
+            isOpen={isSidepanelOpen}
+            href="/dashboard"
+          />
+          <ElementSidebar
+            icon={<FolderKanban width={18} />}
+            text="Templates"
+            isOpen={isSidepanelOpen}
+            href="/dashboard"
+
+          />
+
         </div>
-      }
+
+
+        {/* Bottom Elements */}
+        <div>
+          <ElementSidebar
+            icon={<Settings width={18} />}
+            text="Settings"
+            isOpen={isSidepanelOpen}
+            href="/"
+          />
+          <ElementSidebar
+            icon={<LogOut width={18} />}
+            text="Logout"
+            isOpen={isSidepanelOpen}
+            onClick={handleLogout}
+          />
+        </div>
+
+      </div>
+
 
     </div>
   )
 }
 
 export default Sidebar
+
+
+
+
+
+interface ElementSidebarProps {
+  icon: React.ReactNode
+  text: string
+  isOpen: boolean
+  href?: string
+  textStyle?: React.CSSProperties
+  onClick?: () => void
+}
+const ElementSidebar = ({
+  icon,
+  text,
+  isOpen,
+  href,
+  textStyle,
+  onClick
+}: ElementSidebarProps) => {
+
+  if (onClick) {
+    return(
+      <div
+        onClick={onClick}
+        className={styles.elementSidebar}
+        style={{
+          justifyContent: isOpen ? 'flex-start' : 'center',
+          paddingLeft: isOpen ? '15px' : '0px',
+          ...textStyle
+        }}
+      >
+        {icon}
+        {
+          isOpen &&
+          text
+        }
+      </div>
+    )
+  }
+
+
+  return (
+    <Link href={href ?? ''} className={styles.elementSidebar} style={{
+      justifyContent: isOpen ? 'flex-start' : 'center',
+      paddingLeft: isOpen ? '15px' : '0px',
+      ...textStyle
+    }}>
+      {icon}
+      {
+        isOpen &&
+        text
+      }
+    </Link>
+  )
+}

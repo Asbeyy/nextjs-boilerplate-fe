@@ -1,0 +1,250 @@
+
+.calendar{
+  width: 100%;
+  height: auto;
+  
+  
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .buttons{
+    width: 100%;
+    height: 70px;
+    background-color: #1d1d22;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 40px;
+
+    .buttonsLeft{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      .today{
+        padding: 9px 25px;
+        border: .5px solid #ffffff48;
+        border-radius: 30px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .chevrons{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        user-select: none;
+
+        .chevronButton{
+          padding: 8px;
+          border-radius: 50%;
+          background-color: transparent;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          transition: background-color .2s;
+
+          &:hover{
+            background-color: #31313a51;
+          }
+        }
+      }
+
+      .p{
+        font-size: 18px;
+        font-weight: 300;
+        color: #ffffffd1;
+      }
+
+    }
+
+    .buttonsRight{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+
+      .timeframe{
+        padding: 9px 25px;
+        border: .5px solid #ffffff48;
+        border-radius: 30px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .buttonAppointment{
+
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+
+        padding: 9px 25px;
+        border: .5px solid #ffffff48;
+        border-radius: 30px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .containerControllers{
+    padding-right: 30px;
+    height: 70px;
+    width: 100%;
+    background-color: rgba(25,26,26);
+    position: sticky;
+    top: 55px;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: row;
+
+    
+    
+
+
+    .emptyGap{
+      height: 100%;
+      min-width: 100px;
+      
+    }
+    .containerWeekDays{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      
+      
+    }
+
+    .controllerDay{
+      position: relative;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+
+      .number{
+        font-size: 24px;
+        font-weight: 400;
+        color: white;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .text{
+        font-size: 11px;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #ffffffa6;
+      }
+      
+
+      .sideLines{
+        height: 20px;
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+        border-left: .5px solid #ffffff48;
+      }
+    }
+  }
+
+  .containerTiles{
+    padding-right: 30px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+}
+
+
+
+.verticalHours{
+  height: 100%;
+  min-width: 100px;
+  /* background-color: lightcoral; */
+
+  display: flex;
+  flex-direction: column;
+  
+  
+  
+}
+
+.tileDay{
+  position: relative;
+  width: 100%;
+  height: 100%;
+ /*  background-color: rosybrown; */
+
+  display: flex;
+  flex-direction: column;
+}
+.tileHour{
+  
+  width: 100%;
+  height: 55px;
+/*   background-color: green; */
+  /* border: .5px solid #ffffff48; */
+}
+.tileEvent{
+  position: absolute;
+  
+
+  width: 93%;
+  padding: 10px;
+  background-color: #31313a;
+
+  border-radius: 7px;
+  cursor: pointer;
+
+
+  .eventName{
+    font-size: 14px;
+    color: white;
+  }
+
+  .eventTime{
+    font-size: 12px;
+    color: #ffffffa6;
+  }
+}
+.hourLine{
+  position: absolute;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  
+
+  .dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #b8e603;
+  }
+  .line{
+    width: 100%;
+    height: 1px;
+    background-color: #b8e603;
+  }
+}

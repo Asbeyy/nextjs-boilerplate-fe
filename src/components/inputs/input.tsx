@@ -19,7 +19,7 @@ import style from './input.module.css'
 
 function Input(
     props: {
-        label: string,
+        label?: string,
         value: string,
         onChange: (e:any) => void,
 
@@ -74,8 +74,12 @@ function Input(
   return (
     <div className={style.component}>
         <p>
-            {props.label}
             {
+                props.label &&
+                props.label
+            }
+            {
+                props.label &&
                 props.required &&
                 <label>*</label>
             }

@@ -1,0 +1,61 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form {
+  position: relative;
+
+  .flying {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .img {
+    width: 90px;
+  }
+
+  .containerInputs {
+    width: 65%;
+    min-width: 300px;
+  }
+
+
+  .circleContainerLeft {
+    position: absolute;
+    top: 50%;
+    left: -90px;
+    transform: translateY(-40%);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(10, 2fr);
+    gap: 0px;
+    width: 100px;
+    height: 220px;
+  }
+
+  .circleContainerRight {
+    position: absolute;
+    top: 50%;
+    right: -105px;
+    transform: translateY(-40%);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 0px;
+    width: 100px;
+    height: 220px;
+  }
+
+  .circle {
+    height: 5px;
+    width: 5px;
+    background: radial-gradient(circle, var(--dots-color) 2px, transparent 3px);
+    border-radius: 50%;
+    z-index: 2;
+  }
+}
