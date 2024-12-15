@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './calendar.module.css'
-import { isToday } from 'date-fns'
 
 interface HourLineProps {
     isToday: boolean

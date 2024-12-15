@@ -34,7 +34,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     
     useEffect(() => {
         //check if you are in the protected route /dashboard (only then you need to check if the user is authenticated)
-        if (pathname.startsWith('/dashboard')){
+        const pieces = pathname.split('/');
+        const protectedRoutes = [
+            '/dashboard',
+        ];
+        if (protectedRoutes.includes(`/${pieces[1]}`)){
             
             const fetchAdminStatus = async () => {
                 const adminStatus = await authenticate();

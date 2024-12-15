@@ -1,31 +1,34 @@
 import { Plus } from 'lucide-react'
 import styles from './title.module.css'
-import React from 'react'
+import React, { act, CSSProperties } from 'react'
+import Skeleton from '../loaders/Skeleton'
 
 
-function Title(props: { title: string, subtitle?: string, buttonPlus?: boolean, onClick?: () => void, isLoading?: boolean, textColor?: string }) {
+function Title(props: {style?: CSSProperties ,title?: string, subtitle?: string, actionRight?: React.ReactNode , onClick?: () => void, isLoading?: boolean, textColor?: string }) {
 
 
     if (props.isLoading) {
         return (
             <div className={styles.containerTitle}>
-                <div>
-                    <p className={styles.titleSkeleton}>&nbsp;</p>
+                <div className='flex flex-col gap-[7px]'>
+                    <div className='flex items-center justify-center w-[170px] h-[24px]'>
+                        <Skeleton/>
+                    </div>
                     {
                         props.subtitle &&
-                        <p className={styles.subtitle}>{props.subtitle}</p>
+
+                        <div className='flex items-center justify-center w-[130px] h-[20px]'>
+                            <Skeleton/>
+                        </div>
                     }
                 </div>
-                {
-                    props.buttonPlus &&
-                    <Plus width={18} />
-                }
+                
             </div>
         )
     }
 
     return (
-        <div className={styles.containerTitle}>
+        <div className={styles.containerTitle} style={props.style}>
             <div>
                 <p className={styles.title} style={{
                     color: props.textColor ? props.textColor : 'white'
@@ -34,7 +37,11 @@ function Title(props: { title: string, subtitle?: string, buttonPlus?: boolean, 
                         style={{
                             opacity: props.isLoading ? 0 : 1
                         }}
-                    >{props.title}</span>
+                    >
+                        {   props.title &&
+                            props.title
+                        }
+                    </span>
                 </p>
                 {
                     props.subtitle &&
@@ -42,8 +49,8 @@ function Title(props: { title: string, subtitle?: string, buttonPlus?: boolean, 
                 }
             </div>
             {
-                props.buttonPlus &&
-                <p>+</p>
+                props.actionRight &&
+                props.actionRight
             }
         </div>
     )

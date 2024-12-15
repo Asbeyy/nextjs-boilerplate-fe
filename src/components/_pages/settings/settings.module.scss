@@ -1,0 +1,182 @@
+.profilePage{
+    width: 100%;
+    height: calc(100%);
+    padding: 30px 30px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    
+
+    .form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+        
+        .avatar{
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: rgba(33, 33, 33, 0.408);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            object-fit: cover;
+            border: 2px solid transparent;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .avatar:hover{
+            scale: 1.03;
+            border-color: aliceblue;
+        }       
+
+        .uploadButton{
+            margin-top: 10px;
+            width: 250px;
+            height: 40px;
+            border: 1px solid rgb(252, 252, 252);
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            
+            .label{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                cursor: pointer;
+                font-size: 14px;
+                color: rgb(252, 252, 252);
+                font-weight: 300;
+            }
+        }
+
+        .banner {
+            width: 100%;
+            height: 300px;
+
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+}
+
+.billingPage{
+    width: 100%;
+    height: calc(100%);
+    padding: 30px 30px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    .form{
+        width: 100%;
+        
+        display: flex;  
+        flex-direction: column;
+        align-items: start;
+        
+        
+        .avatar{
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: rgb(24, 86, 139);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .uploadButton{
+            margin-top: 10px;
+            width: 250px;
+            height: 40px;
+            border: 2px solid rgba(252, 252, 252, 0.433);
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            
+            .label{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 15px;
+                color: rgba(252, 252, 252, 0.433);
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.accessPage{
+    width: 100%;
+    height: calc(100%);
+    padding: 30px 30px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    .form{
+        width: 100%;
+        display: flex;  
+        flex-direction: column;
+        align-items: center;
+        
+        
+        .avatar{
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: rgb(24, 86, 139);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .uploadButton{
+            margin-top: 10px;
+            width: 250px;
+            height: 40px;
+            border: 2px solid rgba(252, 252, 252, 0.433);
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            
+            .label{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 15px;
+                color: rgba(252, 252, 252, 0.433);
+                font-weight: 300;
+            }
+        }
+    }
+}

@@ -6,14 +6,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0px 0px;
+    margin-bottom: 20px;
+    
 
     .title{
-        margin-top: 10px;
         font-size: 20px;
         font-weight: 500;
         color: #ffffff;
-        margin-bottom: 10px;
 
         display: flex;
         justify-content: flex-start;
@@ -24,7 +24,7 @@
         font-size: 14px;
         font-weight: 300;
         color: #ffffff84;
-        margin-bottom: 20px;
+        
 
         display: flex;
         justify-content: flex-start;
@@ -44,7 +44,7 @@
 
         width: 270px;
         border-radius: 10px;
-        background: linear-gradient(110deg, #ececec 8%, #5831c31e 18%, #ececec 33%);
+        background: linear-gradient(110deg, #33333369 8%, #44444498 18%, #33333359 33%);
         background-size: 200% 100%;
         animation: 1.5s shine linear infinite;
     }
@@ -63,10 +63,10 @@
         justify-content: flex-start;
         align-items: center;
 
-        width: 100%;
+        width: 40%;
         border-radius: 10px;
         background: #eeeeee71;
-        background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+        background: linear-gradient(110deg, #33333369 8%, #44444498 18%, #33333359 33%);
         border-radius: 5px;
         filter: blur(1px);
         background-size: 200% 100%;
@@ -85,4 +85,10 @@
     -webkit-text-fill-color: transparent;
 
     transition: all 300ms ease;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% 100%;
+    }
 }

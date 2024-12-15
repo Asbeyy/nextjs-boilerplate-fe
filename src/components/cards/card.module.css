@@ -76,3 +76,25 @@
 		}
 	}
 }
+
+.creditCard{
+	width: 480px;
+	height: 300px;
+	background: linear-gradient(120deg, #48639786, #2e2e2e);
+	border-radius: 20px;
+	padding: 20px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+
+	.chip{
+		position: absolute;
+		width: 80px;
+		top: 35%;
+	}
+	.paymentProvider{
+		width: 80px;
+	}
+}

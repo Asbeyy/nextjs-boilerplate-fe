@@ -62,7 +62,7 @@ export default function Register() {
         <div className={styles.circleContainerLeft}>
           {
             Array.from({ length: 50 }).map((_, i) => (
-              <div className={styles.circle} />
+              <div key={i} className={styles.circle} />
             ))
           }
         </div>
@@ -70,7 +70,7 @@ export default function Register() {
         <div className={styles.circleContainerRight}>
           {
             Array.from({ length: 50 }).map((_, i) => (
-              <div className={styles.circle} />
+              <div key={i} className={styles.circle} />
             ))
           }
         </div>

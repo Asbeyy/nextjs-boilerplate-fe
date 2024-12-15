@@ -1,95 +1,195 @@
-.sidebar{
+.sidebar {
     height: 100vh;
-    transition: all 0.2s;
+    transition: all 0.5s ease;
     user-select: none;
 
- 
- 
-    .containerLinks{
+    .containerLinks {
         width: 100%;
         height: calc(100vh - 75px);
         background-color: var(--background);
         display: flex;
-        flex-direction: column; 
-        justify-content: space-between;     
-        
+        flex-direction: column;
+        justify-content: space-between;
+
         box-sizing: border-box;
         padding-top: 30px;
-        padding-right: 15px;
-        
-        transition: all 0.1s;
+
+        padding-left: 3px;
+        transition: all 0.5s ease;
     }
 
-    .elementSidebar{
-        
-        
+    .elementSidebar {
         display: flex;
         align-items: center;
         justify-content: flex-start;
 
         cursor: pointer;
-        transition: all 0.1s;
+        transition: all 0.5s ease;
 
         color: var(--text);
         font-size: 14px;
         font-weight: 300;
-        
-        padding-left: 10px;
+
         gap: 10px;
-        border-radius: 10px;
-        
+
+        min-width: none;
         width: 100%;
         height: 40px;
-        
+
         box-sizing: border-box;
 
-        margin-left: 15px;
+        position: relative;
+
+        border-color: #ffffffa1;
+
+        .nameElement {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 40px;
+
+            transition:
+                left 0.5s ease,
+                opacity 0.25s ease;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .selectorBar {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+
+            height: 100%;
+            width: 5px;
+            border-radius: 50px;
+
+            transition: all 0.5s ease;
+            background: linear-gradient(180deg, #ffffff, #ffffff4c);
+        }
     }
 
-    .elementSidebar:hover{
+    .elementSidebar:hover {
         background-color: var(--card-background);
     }
+}
 
-
+.sidebarSettings {
+    width: 250px;
+    height: calc(100%);
     
+    transition: all 0.5s ease;
+    user-select: none;
 
-   
-} 
+    .containerLinks {
+        width: 100%;
 
-.header{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        box-sizing: border-box;
+        padding-top: 30px;
+
+        padding-left: 3px;
+        transition: all 0.5s ease;
+    }
+
+    .elementSidebar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        cursor: pointer;
+        transition: all 0.5s ease;
+
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 300;
+
+        gap: 10px;
+
+        min-width: none;
+        width: 100%;
+        height: 40px;
+
+        box-sizing: border-box;
+
+        position: relative;
+
+        border-color: #ffffffa1;
+
+        .nameElement {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 40px;
+
+            transition:
+                left 0.5s ease,
+                opacity 0.25s ease;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .selectorBar {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+
+            height: 100%;
+            width: 5px;
+            border-radius: 50px;
+
+            transition: all 0.5s ease;
+            background: linear-gradient(180deg, #ffffff, #ffffff4c);
+        }
+    }
+
+    .elementSidebar:hover {
+        background-color: var(--card-background);
+    }
+}
+
+
+.header {
     background-color: var(--background);
 
-    width:100%;
-    min-height:55px;
-    padding:0 20px;
+    width: 100%;
+    min-height: 55px;
+    padding: 0 15px;
+    padding-left: 10px;
 
-    
-
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 
     position: sticky;
     top: 0;
     z-index: 100;
-    
-    
-    .dropDown_title_box{
-        display:flex;
+
+    .dropDown_title_box {
+        display: flex;
         align-items: center;
         justify-content: center;
         font-size: 15px;
     }
-    
-    .header_icon{
-        margin-right:20px;
-        cursor:pointer;
+
+    .header_icon {
+        margin-right: 20px;
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    
-    .profilePicture{
+
+    .profilePicture {
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -99,44 +199,48 @@
         justify-content: center;
         cursor: pointer;
     }
-    
 }
 .modal {
+    cursor: default;
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.20);
+    background-color: rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-
     backdrop-filter: blur(5px);
+    user-select: none;
 
-    
-
-    .containerElements{
-        width: 100%;
-        max-width: 800px;
-        max-height: 100%;
-        overflow-y: auto;
-        background-color: rgba(48, 50, 74, 0.871);
-        border-radius: 10px;
-        padding: 20px 0;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.100);
+    .containerElements {
         position: relative;
         z-index: 1000;
-        color: black;
-        transition: all .3s;
+        transition: all 0.3s;
 
+        
+        max-height: 90%;
+        padding: 20px;
+
+        background-color: var(--card-background);
         display: flex;
         flex-direction: column;
-        
+
+        box-shadow:
+            0 0 0 1px hsla(0, 0%, 100%, 0.08),
+            0 2px 4px rgba(0, 0, 0, 0.3),
+            0 12px 24px rgba(0, 0, 0, 0.3);
+
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: scroll;
+
+        border-radius: 20px;
     }
 }
-.pageComponent{
+.pageComponent {
     height: calc(100vh - 55px);
     width: 100%;
 
@@ -144,15 +248,14 @@
     flex-direction: row;
     justify-content: center;
 
-    .containerPage{
+    .containerPage {
         height: 100%;
 
         display: flex;
         flex-direction: column;
         width: 100%;
-        
-    
-        .cardPage{
+
+        .cardPage {
             width: 100%;
             height: 100%;
 
@@ -161,13 +264,12 @@
             flex-direction: column;
             gap: 10px;
 
+            padding: 30px;
+
             overflow-y: scroll !important;
 
-            
             transition: all 0.1s;
             border-radius: 20px;
-
-            
         }
     }
 }

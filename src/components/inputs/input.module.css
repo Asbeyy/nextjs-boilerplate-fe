@@ -9,10 +9,15 @@
     font-size: 14px;
 }
 
+.component .countrySelect{
+
+    transform: translateY(7px);
+}
+
 .inputContainer{
     width: 100%;
     height: 40px;
-
+    
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -125,13 +130,13 @@
     position: relative;
     width: 100%;
     height: 40px;
-    background-color:rgba(12, 12, 28, 0.214);
+    background-color:var(--status-background);
     border-radius: 5px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 10px;
+    
 
     font-size: 14px;
     font-weight: 300;
@@ -144,21 +149,20 @@
 
     .dropdown{
         position: absolute;
-        top: 40px;
-        left: 0;
-        width: 100%;
+        top: 30px;
+        left: -10px;
+        width: 300px;
         max-height: 200px;
         overflow-y: auto;
-        background-color: rgb(68, 68, 68);
+        background-color: var(--status-background);
         color: white;
-        border-radius: 1rem;
+        border-radius: 0 0 1rem 1rem;
 
         padding: 10px;
         display: flex;
         flex-direction: column;
         gap: 2px;
         z-index: 10;
-        
         .option{
             border-radius: 10px;
             min-height: 30px;
@@ -169,7 +173,7 @@
             
 
             &:hover{
-                background-color: rgba(255, 255, 255, 0.1);
+                
             }
         }
     }

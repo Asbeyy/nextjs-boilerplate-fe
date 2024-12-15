@@ -9,6 +9,7 @@ interface InputSelectProps {
     options: {
         value: string
         label: string
+        picture?: string
     }[]
 
 
@@ -43,7 +44,7 @@ function InputSelect({ options, placeholder, onSelect, style, value, label }: In
                 {
                     value !== "" ?
                         <div>{selected}</div> :
-                        <div>{placeholder}</div>
+                        <div style={{color: '#ffffff80'}}>{placeholder}</div>
                 }
                 <ChevronDownIcon style={{ width: '20px' }} />
                 {
@@ -54,6 +55,10 @@ function InputSelect({ options, placeholder, onSelect, style, value, label }: In
                     >
                         {options.map((option, index) => (
                             <div key={index} onClick={() => handleSelect(option.value, option.label)} className={styles.option}>
+                                {
+                                    option.picture &&
+                                    <img src={option.picture} alt="flag" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                                }
                                 {option.label}
                             </div>
                         ))}

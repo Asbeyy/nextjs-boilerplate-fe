@@ -35,7 +35,7 @@ function CardAlert({ color, title, message, buttonText, buttonClick, learnMoreLi
                     {
                         learnMoreLink &&
                         <Link className={styles.link} href={learnMoreLink || '/'}>
-                            Leggi documentazione
+                            Learn more
                         </Link>
                     }
                 </p>
