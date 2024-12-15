@@ -15,16 +15,16 @@ import toast from "react-hot-toast";
 import ToastCustom from "@/components/toast/Toast";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-
+  const router = useRouter()
   
 
 
+  router.push('/auth/login')
   return (
-    <main className={styles.main}>
-     
-    </main >
+    null
   );
 }
 

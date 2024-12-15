@@ -36,6 +36,7 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
   background-color: var(--background);
+  color-scheme: dark;
 }
 
 body {
@@ -47,8 +48,3 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}

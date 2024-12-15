@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Input from "@/components/inputs/input";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import InputHidden from "@/components/inputs/inputHidden";
 import Button from "@/components/buttons/Button";
 import ButtonLoading from "@/components/buttons/ButtonLoading";
@@ -16,8 +16,17 @@ import ToastCustom from "@/components/toast/Toast";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
+import LoaderWhite from "@/components/loaders/LoaderWhite";
 
-export default function Home() {
+export default function Main() {
+  return (
+    <Suspense fallback={<LoaderWhite/>}>
+      <Home/>
+    </Suspense>
+  )
+}
+
+function Home() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -85,7 +94,7 @@ export default function Home() {
         <div className={styles.circleContainerLeft}>
           {
             Array.from({ length: 50 }).map((_, i) => (
-              <div className={styles.circle}/>
+              <div key={i} className={styles.circle}/>
             ))
           }
         </div>
@@ -93,7 +102,7 @@ export default function Home() {
         <div className={styles.circleContainerRight}>
           {
             Array.from({ length: 50 }).map((_, i) => (
-              <div className={styles.circle}/>
+              <div key={i} className={styles.circle}/>
             ))
           }
         </div>

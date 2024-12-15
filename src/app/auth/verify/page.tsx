@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import styles from "../login/page.module.css";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import ButtonLoading from "@/components/buttons/ButtonLoading";
 import Card from "@/components/cards/Card";
 import Tag from "@/components/tags/Tag";
@@ -16,7 +16,16 @@ import LoaderWhite from "@/components/loaders/LoaderWhite";
 import { sendVerificationEmail, verifyEmail } from "@/services/api";
 
 
-export default function Verify() {
+export default function main () {
+  return (
+    <Suspense fallback={<LoaderWhite/>}>
+      <Verify/>
+    </Suspense>
+  )
+}
+
+
+function Verify() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -112,14 +121,14 @@ export default function Verify() {
         <div className={styles.circleContainerLeft}>
           {
             Array.from({ length: 50 }).map((_, i) => (
-              <div className={styles.circle} />
+              <div key={i} className={styles.circle} />
             ))
           }
         </div>
         <div className={styles.circleContainerRight}>
           {
             Array.from({ length: 50 }).map((_, i) => (
-              <div className={styles.circle} />
+              <div key={i} className={styles.circle} />
             ))
           }
         </div>

@@ -96,7 +96,7 @@ function Sidebar() {
             }
             text="Settings"
             isOpen={isSidepanelOpen}
-            href="/"
+            href="/dashboard/settings"
           />
           <ElementSidebar
             currentPath={path}
@@ -105,7 +105,7 @@ function Sidebar() {
             }
             text="F.A.Q"
             isOpen={isSidepanelOpen}
-            href="/"
+            href="/dashboard/faq"
           />
           <ElementSidebar
             currentPath={path}

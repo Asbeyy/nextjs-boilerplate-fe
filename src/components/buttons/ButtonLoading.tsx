@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import style from './button.module.css'
-import LoaderWhite from '../loaders/LoaderWhite'
+import Loader1 from '../loaders/Loader1'
 
 interface ButtonProps {
     onClick: () => any
@@ -12,46 +12,37 @@ interface ButtonProps {
     deactive?: boolean
 }
 
-
-function ButtonLoading({onClick, color,backgroundColor, text, deactive}: ButtonProps) {
+function ButtonLoading({ onClick, color, backgroundColor, text, deactive }: ButtonProps) {
   const [isLoading, setIsLoading] = useState(false)
-  
-  const handleClick = async () => {
 
+  const handleClick = async () => {
+    if (isLoading) return
     setIsLoading(true)
 
-    const click = await onClick()
-
-    if (!click){
+    const finish = await onClick()
+    
+    if (finish) {
       setIsLoading(false)
     } else {
       setIsLoading(false)
     }
-  }
 
+  }
+  
 
   return (
     <div
-        className={style.component}
-        style={{
-          background: backgroundColor, 
-          opacity: deactive ? '.3' : '1',
-          color: color,
-          cursor: !isLoading || deactive ? 'pointer' : 'not-allowed',
-          pointerEvents: deactive ? 'none' : 'auto'
-        }}
-        aria-disabled={deactive}
-        onClick={()=>{
-          !isLoading ?
-          handleClick() :
-          null
-        }}
+      className={style.component}
+      style={{
+        background: backgroundColor,
+        color: color,
+        cursor: isLoading || deactive ? 'not-allowed' : 'pointer',
+        pointerEvents: isLoading || deactive ? 'none' : 'auto', // Fully disables click during loading
+        opacity: isLoading || deactive ? 0.5 : 1,
+      }}
+      onClick={handleClick}
     >
-      {
-        !isLoading ?
-        text :
-        <LoaderWhite/>
-      }
+      {isLoading ? <Loader1 /> : text}
     </div>
   )
 }

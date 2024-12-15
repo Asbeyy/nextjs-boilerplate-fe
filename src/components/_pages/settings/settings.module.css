@@ -1,0 +1,154 @@
+.profilePage {
+  width: 100%;
+  height: 100%;
+  padding: 30px 30px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+.profilePage .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.profilePage .form .avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: rgba(33, 33, 33, 0.408);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.profilePage .form .avatar:hover {
+  scale: 1.03;
+  border-color: aliceblue;
+}
+.profilePage .form .uploadButton {
+  margin-top: 10px;
+  width: 250px;
+  height: 40px;
+  border: 1px solid rgb(252, 252, 252);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.profilePage .form .uploadButton .label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: rgb(252, 252, 252);
+  font-weight: 300;
+}
+.profilePage .form .banner {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.billingPage {
+  width: 100%;
+  height: 100%;
+  padding: 30px 30px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+.billingPage .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.billingPage .form .avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: rgb(24, 86, 139);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.billingPage .form .uploadButton {
+  margin-top: 10px;
+  width: 250px;
+  height: 40px;
+  border: 2px solid rgba(252, 252, 252, 0.433);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.billingPage .form .uploadButton .label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: rgba(252, 252, 252, 0.433);
+  font-weight: 300;
+}
+
+.accessPage {
+  width: 100%;
+  height: 100%;
+  padding: 30px 30px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+.accessPage .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.accessPage .form .avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: rgb(24, 86, 139);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.accessPage .form .uploadButton {
+  margin-top: 10px;
+  width: 250px;
+  height: 40px;
+  border: 2px solid rgba(252, 252, 252, 0.433);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.accessPage .form .uploadButton .label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  color: rgba(252, 252, 252, 0.433);
+  font-weight: 300;
+}/*# sourceMappingURL=settings.module.css.map */

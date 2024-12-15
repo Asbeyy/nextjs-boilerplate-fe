@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useContext } from 'react';
 import { AuthContext } from '../_context/AuthContext';
 import styles from './calendar.module.css';
 
-import Modal from '../_globals/Modal';
+
 import Title from '../titles/Title';
 import InputCalendar from '../inputs/InputCalendar';
 import Button from '../buttons/Button';
@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 
 import toast from 'react-hot-toast';
+import Modal from '../_globals/modal';
 
 interface CalendarTableProps {
   property: any;
