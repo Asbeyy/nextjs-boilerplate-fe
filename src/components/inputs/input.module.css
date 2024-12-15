@@ -155,6 +155,7 @@
         max-height: 200px;
         overflow-y: auto;
         background-color: var(--status-background);
+
         color: white;
         border-radius: 0 0 1rem 1rem;
 

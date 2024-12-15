@@ -7,6 +7,7 @@ import Skeleton from '../loaders/Skeleton'
 function Title(props: {style?: CSSProperties ,title?: string, subtitle?: string, actionRight?: React.ReactNode , onClick?: () => void, isLoading?: boolean, textColor?: string }) {
 
 
+
     if (props.isLoading) {
         return (
             <div className={styles.containerTitle}>
@@ -16,13 +17,13 @@ function Title(props: {style?: CSSProperties ,title?: string, subtitle?: string,
                     </div>
                     {
                         props.subtitle &&
-
                         <div className='flex items-center justify-center w-[130px] h-[20px]'>
                             <Skeleton/>
                         </div>
                     }
                 </div>
                 
+
             </div>
         )
     }

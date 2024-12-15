@@ -40,6 +40,7 @@
 
         position: relative;
 
+
         border-color: #ffffffa1;
 
         .nameElement {
@@ -152,10 +153,7 @@
         }
     }
 
-    .elementSidebar:hover {
-        background-color: var(--card-background);
-    }
-}
+
 
 
 .header {
@@ -223,6 +221,7 @@
         
         max-height: 90%;
         padding: 20px;
+
 
         background-color: var(--card-background);
         display: flex;
