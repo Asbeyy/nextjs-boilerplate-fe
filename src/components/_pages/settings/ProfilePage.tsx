@@ -16,7 +16,7 @@ import Tag from '@/components/tags/Tag'
 import { AuthContext } from '@/components/_context/AuthContext'
 
 function ProfilePage() {
-    const {role} = useContext(AuthContext)
+    const { role } = useContext(AuthContext)
 
     const [isUploadingPicture, setIsUploadingPicture] = React.useState(false)
     const [isLoading, setIsLoading] = React.useState(true)
@@ -123,22 +123,22 @@ function ProfilePage() {
                                 profile.profile_picture
                                 ?
                                 <div>
-                                    <div 
-                                    title='Change Profile Picture'
-                                    style={{
-                                        transform: 'translate(50%, 50px)',
-                                        borderRadius: '50%',
-                                        background: 'var(--status-color',
-                                        backdropFilter: 'blur(10px)',
-                                        
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        cursor: 'pointer',
-                                        width: '60px',
-                                        height: '60px',
-                                    }}
-                                    
+                                    <div
+                                        title='Change Profile Picture'
+                                        style={{
+                                            transform: 'translate(50%, 50px)',
+                                            borderRadius: '50%',
+                                            background: 'var(--status-color',
+                                            backdropFilter: 'blur(10px)',
+
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            cursor: 'pointer',
+                                            width: '60px',
+                                            height: '60px',
+                                        }}
+
                                     >
                                         <label htmlFor="name">
                                             {
@@ -166,13 +166,51 @@ function ProfilePage() {
                                     />
                                 </div>
                                 :
-                                    profile &&
+                                profile &&
                                     !profile.profile_picture ?
-                                    <div className={styles.avatar}>
-                                        <span style={{ fontSize: '60px' }}>
-                                            {profile.name[0].toUpperCase()}
-                                            {profile.surname[0].toUpperCase()}
-                                        </span>
+                                    <div>
+                                        <div
+                                            title='Change Profile Picture'
+                                            style={{
+                                                transform: 'translate(50%, 50px)',
+                                                borderRadius: '50%',
+                                                background: 'var(--status-color',
+                                                backdropFilter: 'blur(10px)',
+
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                cursor: 'pointer',
+                                                width: '60px',
+                                                height: '60px',
+                                            }}
+
+                                        >
+                                            <label htmlFor="name">
+                                                {
+                                                    !isUploadingPicture &&
+                                                    <Camera width={22} />
+                                                }
+
+                                                {
+                                                    isUploadingPicture &&
+                                                    <LoaderWhite />
+                                                }
+                                            </label>
+                                        </div>
+
+                                        <input hidden type="file" id="name" onChange={(e) => {
+                                            if (e.target.files) {
+                                                handleProfilePictureUpload(e)
+                                            }
+                                        }} />
+
+                                        <div className={styles.avatar}>
+                                            <span style={{ fontSize: '60px' }}>
+                                                {profile.name[0].toUpperCase()}
+                                                {profile.surname[0].toUpperCase()}
+                                            </span>
+                                        </div>
                                     </div>
                                     :
                                     <div className={styles.avatar} style={{
@@ -188,7 +226,7 @@ function ProfilePage() {
                     <div style={{ position: 'absolute', bottom: 20, right: 20 }}>
                         <Tag
                             text={role ? role : 'User'}
-                            
+
                         />
                     </div>
                 </div>

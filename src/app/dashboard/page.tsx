@@ -28,6 +28,8 @@ function page() {
             message={'This is the dashboard of the application. Here you can see all the information you need to manage your account.'}
             color='orange'
           />
+      
+  
         </Page>
     </div>
   )

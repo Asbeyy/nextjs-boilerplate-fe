@@ -12,6 +12,8 @@ interface InputSelectProps {
         picture?: string
     }[]
 
+    radiusImage?: string
+
 
     value: string
     onSelect: (value: string) => void
@@ -19,7 +21,7 @@ interface InputSelectProps {
     style?: React.CSSProperties
 }
 
-function InputSelect({ options, placeholder, onSelect, style, value, label }: InputSelectProps) {
+function InputSelect({ options, placeholder, onSelect, style, radiusImage, value, label }: InputSelectProps) {
     //states
     const [selected, setSelected] = React.useState<string | null>(null)
     const [isOpen, setIsOpen] = React.useState(false)
@@ -28,7 +30,9 @@ function InputSelect({ options, placeholder, onSelect, style, value, label }: In
     const toggleDropdown = () => {
         setIsOpen(prev => !prev)
     }
-    const handleSelect = (value: string, label: string) => {
+    const handleSelect = (event: any, value: string, label: string) => {
+        event.stopPropagation()
+        
         onSelect(value)
         setSelected(label)
         toggleDropdown()
@@ -40,7 +44,7 @@ function InputSelect({ options, placeholder, onSelect, style, value, label }: In
                 label &&
                 <p style={{ color: "white", fontSize: '13px', marginBottom: '5px' }}>{label}</p>
             }
-            <div style={style} onClick={toggleDropdown} className={styles.containerSelect}>
+            <div style={{...style}} onClick={toggleDropdown}  className={styles.containerSelect}>
                 {
                     value !== "" ?
                         <div>{selected}</div> :
@@ -50,14 +54,15 @@ function InputSelect({ options, placeholder, onSelect, style, value, label }: In
                 {
                     isOpen &&
                     <div
+                        
                         className={styles.dropdown}
                         onMouseLeave={toggleDropdown}
                     >
                         {options.map((option, index) => (
-                            <div key={index} onClick={() => handleSelect(option.value, option.label)} className={styles.option}>
+                            <div key={index} onClick={(e) => handleSelect(e,option.value, option.label)} className={styles.option}>
                                 {
                                     option.picture &&
-                                    <img src={option.picture} alt="flag" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                                    <img src={option.picture} alt="flag" style={{ width: '20px', height: '20px', marginRight: '10px', borderRadius: radiusImage ? radiusImage : '0px', objectFit: 'cover' }} />
                                 }
                                 {option.label}
                             </div>

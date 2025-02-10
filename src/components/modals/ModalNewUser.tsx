@@ -8,6 +8,7 @@ import Input from '../inputs/input'
 import ButtonLoading from '../buttons/ButtonLoading'
 import InputSelect from '../inputs/inputSelect'
 import ToastCustom from '../toast/Toast'
+import { createManualProfile } from '@/services/api'
 
 interface ModalNewUserProps {
     isOpen: boolean,
@@ -31,8 +32,20 @@ function ModalNewUser({ isOpen, onClose }: ModalNewUserProps) {
             return true
         }
 
-        ToastCustom('success', 'User created successfully')
-        return true
+        const call = await createManualProfile(formData.name, formData.surname, formData.email, formData.role)
+
+        if (call.success){
+            ToastCustom('success', 'User created successfully')
+            onClose()
+            setTimeout(() => {
+                window.location.reload()
+            }, 1000)
+
+            return true
+        }
+
+        ToastCustom('error', 'An error occurred while creating the user')
+
     }
 
 
@@ -109,21 +122,27 @@ function ModalNewUser({ isOpen, onClose }: ModalNewUserProps) {
                             label={'Role'}
                             placeholder={'Select a role'}
                             options={[
-                                { value: '1', label: 'Admin' },
-                                { value: '2', label: 'Developer' },
-                                { value: '3', label: 'User' },
+                                { value: 'admin', label: 'Admin' },
+                                { value: 'operator', label: 'Developer' },
+                                { value: 'user', label: 'Customer' },
                             ]}
                             value={formData.role}
                             onSelect={(value) => {
                                 setFormData({
                                     ...formData,
                                     role: value
-                                })
+                              })
+                            }}
+                            style={{
+                                
+                                paddingLeft:'10px'
                             }}
                         />
                         <ButtonLoading
                             text={'Create'}
-                            onClick={handleCreateUser}
+                            onClick={()=>{
+                                return handleCreateUser()
+                            }}
                             color='white'
                             backgroundColor='var(--accent)'
                         />

@@ -8,6 +8,7 @@ import React from 'react'
 function BillingTables() {
     return (
         <Table
+            style={{marginTop: '30px'}}
             title='Invoices'
             subtitle='View your billing history'
             actionRight={
@@ -30,14 +31,17 @@ function BillingTables() {
             <TableCard
                 main='Invoice #1234'
                 others={['12/12/2021', '$200']}
+                isDownloadAvailable={true}
             />
             <TableCard
                 main='Invoice #1234'
                 others={['12/12/2021', '$200']}
+                isDownloadAvailable={true}
             />
             <TableCard
                 main='Invoice #1234'
                 others={['12/12/2021', '$200']}
+                isDownloadAvailable={true}
             />
         </Table>
     )

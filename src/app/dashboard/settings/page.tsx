@@ -29,12 +29,8 @@ function Main() {
       <Suspense fallback={<div></div>}>
         <Header title={'Overview'} />
         <Page>
-          <br />
-          <Title
-            isLoading={false}
-            title={'Account Settings'}
-            
-          />
+          
+          
           <View/>
         </Page>
       </Suspense>

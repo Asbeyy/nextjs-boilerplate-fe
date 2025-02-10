@@ -12,7 +12,7 @@ function TableCardHeader({ main, others, isDownloadAvailable }: TableCardRowProp
         <div className='flex items-center justify-between px-4 py-2'>
             <div className='flex items-center gap-2'>
                 {/* <div style={{ width: '20px', height: '20px', background: '#ffffff50', borderRadius: '5px' }}></div> */}
-                <p style={{ fontSize: '13px' }} className='mx-2'>Invoice</p>
+                <p style={{ fontSize: '13px' }} className='mx-2'>{main}</p>
             </div>
 
             <div className='flex items-center justify-between gap-4'>

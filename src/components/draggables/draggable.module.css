@@ -1,0 +1,56 @@
+.draggableBoard {
+  margin-top: 10px;
+  width: 100%;
+  height: calc(100vh - 280px);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.draggableColumn {
+  width: 300px;
+  height: 100%;
+  background-color: var(--background);
+  border-radius: 10px;
+  padding: 10px;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.draggableCard {
+  height: auto;
+  width: 300px;
+  max-width: 100%;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.135);
+  border: 2px solid transparent;
+  z-index: 100000;
+  font-size: 13px;
+  font-weight: 300;
+  transition: transform 0.2s ease-in-out, border 0.15 ease;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.draggableCard .bannerTask {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.draggableCard .bannerTask .p {
+  font-size: 10px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  border: 2px solid rgba(182, 182, 182, 0.252);
+}
+
+.draggableCard:hover {
+  border: 2px solid var(--green);
+}/*# sourceMappingURL=draggable.module.css.map */

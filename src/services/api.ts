@@ -75,6 +75,53 @@ export const authenticate = async () => {
   return await response.json();
 }
 
+export const getAllProfiles = async (page: number, limit:number, search: string, filter?: string) => {
+  const response = await fetch(`${API_URL}/account/profiles/all?page=${page}&limit=${limit}&search=${search}&filter=${filter}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+  });
+
+  return await response.json();
+}
+export const getAllOperators = async () => {
+  const response = await fetch(`${API_URL}/account/operators/all`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+  });
+
+  return await response.json();
+}
+export const getAllUsers = async () => {
+  const response = await fetch(`${API_URL}/account/users/all`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+  });
+
+  return await response.json();
+}
+export const createManualProfile = async (name: string, surname: string, email: string, type: string) => {
+  const response = await fetch(`${API_URL}/account/admin/create`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify({ name, surname, email, type }),
+  });
+
+  return await response.json();
+}
+
+
 //Settings
 export const getSettingsProfile = async () => {
   const response = await fetch(`${API_URL}/account/settings/profile`, {
@@ -222,4 +269,154 @@ export const updatePaymentMethodDefault = async (paymentMethodId: string) => {
 
   return await response.json()
 }
+
+
+/* Leads */
+export const getAllLeads = async (page: number, limit:number, search:string ,filter?: string) => {
+  const response = await fetch(`${API_URL}/leads/all?page=${page}&limit=${limit}&filter=${filter}&search=${search}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+  });
+
+  return await response.json();
+}
+export const getLead = async (id: string) => {
+  const response = await fetch(`${API_URL}/leads/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+  });
+
+  return await response.json();
+}
+export const updateLeadStatus = async (id: string, status: string) => {
+  const response = await fetch(`${API_URL}/leads/${id}/status`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify({ status }),
+  });
+
+  return await response.json();
+}
+export const updateLeadEmail = async (id: string, email: string) => {
+  const response = await fetch(`${API_URL}/leads/${id}/email`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify({ email }),
+  });
+
+  return await response.json();
+}
+
+
+/* Project */
+export const getAllProjects = async (filter?: string) => {
+  const response = await fetch(`${API_URL}/projects?filter=${filter}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+  });
+
+  return await response.json();
+}
+export const getProject = async (id: string) => {}
+
+export const createProjectAdmin = async (name: string, description: string, operators: string[], ownerId: string) => {
+  const response = await fetch(`${API_URL}/projects/admin/add`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify({ name, description, operators, ownerId }),
+  });
+
+  return await response.json();
+}
+export const createProjectCustomer = async (name: string, description: string, operators: string[]) => {
+  const response = await fetch(`${API_URL}/projects/user/add`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify({ name, description, operators }),
+  });
+
+  return await response.json();
+}
+export const updateProjectOperators = async (id: string, operators: string[]) => {
+  const response = await fetch(`${API_URL}/projects/update/operators/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify({ operators }),
+  });
+
+  return await response.json();
+}
+export const getTaskById = async (taskId: string) =>{
+  const response = await fetch(`${API_URL}/projects/task/${taskId}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+  })
+
+  return await response.json();
+}
+export const addTaskToProject = async (projectId: string, title: string,  status: string) => {
+
+
+  const response = await fetch(`${API_URL}/projects/task/add/${projectId}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify({  title,  status }),
+  });
+
+  return await response.json();
+}
+export const getAllTasksProject = async (projectId: string) => {
+  const response = await fetch(`${API_URL}/projects/task/get/${projectId}/all`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+  });
+
+  return await response.json();
+}
+export const updateTaskStatus = async ( taskId: string, status: string) => {
+  const response = await fetch(`${API_URL}/projects/task/update/status/${taskId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${getToken()}`,
+    },
+    body: JSON.stringify({ status }),
+  });
+
+  return await response.json();
+}
+
 

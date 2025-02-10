@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import styles from './table.module.css'
 import Title from '../titles/Title'
 import { Download } from 'lucide-react'
@@ -9,11 +9,12 @@ interface TableProps {
     title?: string
     subtitle?: string
     actionRight?: React.ReactNode
+    style?: CSSProperties
 }
 
-function Table({ children, title, subtitle, actionRight }: TableProps) {
+function Table({ children, title, subtitle, actionRight, style }: TableProps) {
     return (
-        <div className='w-full mt-8'>
+        <div className='w-full' style={style}>
             <Title
                 isLoading={false}
                 title={title}

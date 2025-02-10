@@ -7,6 +7,7 @@ import Page from '@/components/_globals/page'
 import Title from '@/components/titles/Title'
 import CardAlert from '@/components/cards/CardAlert'
 import ModalNewUser from '@/components/modals/ModalNewUser'
+import ProfilesList from '@/components/_pages/profile/ProfilesList'
 
 
 
@@ -19,12 +20,11 @@ function Main() {
   }
 
 
-
-
   return (
     <div className={styles.main}>
       <Header title={'Overview'} />
       <Page>
+        
         <Title
           isLoading={false}
           title={'Users'}
@@ -48,11 +48,9 @@ function Main() {
             </div>
           }
         />
-         <CardAlert
-            title={'Welcome to the dashboard'}
-            message={'This is the dashboard of the application. Here you can see all the information you need to manage your account.'}
-            color='yellowgreen'
-          />
+         
+
+          <ProfilesList/>
         
       </Page>
     </div>

@@ -1,0 +1,17 @@
+.ql_custom {
+  border-radius: 20px;
+  border: none;
+  height: 89%;
+  z-index: 100000;
+
+  .ql-toolbar {
+    border: none;
+  }
+  .ql-snow {
+    border: none;
+  }
+}
+
+ql-toolbar.ql-snow {
+  border: none !important;
+}

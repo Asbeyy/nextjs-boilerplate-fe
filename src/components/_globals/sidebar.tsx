@@ -48,32 +48,31 @@ function Sidebar() {
           <br />
           <ElementSidebar
             currentPath={path}
-            icon={<Users width={18} />}
-            text="Users"
+            icon={<Tags width={18} />}
+            text="Leads"
             isOpen={isSidepanelOpen}
-            href="/dashboard/users"
+            href="/dashboard/leads"
           />
           <ElementSidebar
             currentPath={path}
             icon={<ListTodo width={18} />}
-            text="Tasks"
+            text="Projects"
             isOpen={isSidepanelOpen}
-            href="/"
-          />
-          <ElementSidebar
-            currentPath={path}
-            icon={<Tags width={18} />}
-            text="Leads"
-            isOpen={isSidepanelOpen}
-            href="/"
+            href="/dashboard/projects"
           />
           <ElementSidebar
             currentPath={path}
             icon={<FolderKanban width={18} />}
             text="Templates"
             isOpen={isSidepanelOpen}
-            href="/"
-
+            href="/dashboard/templates"
+          />
+          <ElementSidebar
+            currentPath={path}
+            icon={<Users width={18} />}
+            text="Users"
+            isOpen={isSidepanelOpen}
+            href="/dashboard/users"
           />
 
         </div>

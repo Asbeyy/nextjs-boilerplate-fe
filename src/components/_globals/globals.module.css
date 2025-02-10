@@ -152,6 +152,7 @@
             background: linear-gradient(180deg, #ffffff, #ffffff4c);
         }
     }
+}
 
 
 
@@ -209,7 +210,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 30000;
     backdrop-filter: blur(5px);
     user-select: none;
 
@@ -242,7 +243,6 @@
 .pageComponent {
     height: calc(100vh - 55px);
     width: 100%;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -272,3 +272,4 @@
         }
     }
 }
+

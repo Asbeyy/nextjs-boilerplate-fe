@@ -76,10 +76,18 @@ function ModalAllPaymentMethods({ isOpen, onClose, currentPaymentMethodId, quant
                                     <div key={currentCardData.id} className='w-full flex flex-row gap-4' style={{ background: "var(--status-background)", padding: "15px", borderRadius: "10px" }}>
                                         {/* Logo Payment Provider */}
                                         <div>
+                                            {
+                                                currentCardData.card.brand === 'visa' ?
+                                                    <div className='flex bg-[#121212] w-[70px] h-[40px] rounded-[10px] items-center justify-center'>
+                                                        <img src="/icons/visa.png" style={{ scale: 0.6 }} alt="" />
+                                                    </div>
+                                                    :
+                                                    <div className='flex bg-[#ffffff] w-[70px] h-[40px] rounded-[10px] items-center justify-center'>
+                                                        <img src="/icons/mastercard.svg" style={{ scale: 0.6 }} alt="" />
+                                                    </div>
+                                            }
 
-                                            <div className='flex bg-[#ffffff] w-[70px] h-[40px] rounded-[10px] items-center justify-center'>
-                                                <img src="/icons/mastercard.svg" style={{ scale: 0.6 }} alt="" />
-                                            </div>
+                                          
 
                                         </div>
 
