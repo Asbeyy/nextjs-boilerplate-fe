@@ -37,6 +37,7 @@ function HorizontalProjectSection({ category, projects }: HorizontalProjectSecti
                     category &&
                     projects?.filter((project) => project.category === category).map((project) => (
                         <Link
+                            key={project._id}
                             href={'/dashboard/projects/${'}
                             className="h-1/1 w-1/4 bg-red-500 rounded-md p-2 flex flex-col justify-between cursor-pointer"
                             style={{
@@ -77,6 +78,7 @@ function HorizontalProjectSection({ category, projects }: HorizontalProjectSecti
                     !category &&
                     projects?.filter((project) => project.category === category).map((project) => (
                         <Link
+                            key={project._id}
                             href={`/dashboard/projects/${project._id}`}
                             className="h-1/1 w-1/4 bg-red-500 rounded-md p-2 flex flex-col justify-between cursor-pointer"
                             style={{

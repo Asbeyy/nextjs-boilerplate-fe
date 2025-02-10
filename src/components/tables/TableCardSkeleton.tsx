@@ -47,7 +47,7 @@ function TableCardSkeleton({ others, index }: TableCardProps) {
                 <div className='flex items-center justify-between gap-4'>
                     {
                         others.map((other, index) => (
-                            <div style={{ height: '20px', width: '100px'}} className='flex items-center justify-center'>
+                            <div key={index} style={{ height: '20px', width: '100px'}} className='flex items-center justify-center'>
                             <Skeleton
                                 index={index}
                             />

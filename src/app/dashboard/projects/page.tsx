@@ -87,6 +87,7 @@ function Main() {
             .sort(category => category === '' ? -1 : 1)
             .map((category) => (
               <HorizontalProjectSection
+                key={category}
                 projects={projects.filter((project: any) => project.category === category)}
                 category={category}
               />
