@@ -54,7 +54,7 @@ function TableCard({ main, others, isDownloadAvailable, srcImg, onClick }: Table
                 <div className='flex items-center justify-between gap-4'>
                     {
                         others.map((other, index) => (
-                            <p key={index} className='w-[100px]' style={{ fontSize: '14px' }}>{other}</p>
+                            <p key={index} className='w-[150px]' style={{ fontSize: '14px' }}>{other}</p>
                         ))
                     }
                     {

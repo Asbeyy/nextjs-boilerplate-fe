@@ -41,6 +41,7 @@ function LeadsList() {
         }
         const call = await getAllLeads(page, limit, search, filter);
         if (call.success) {
+            console.log(call.data)
             setLeads((prev: any) => [...prev, ...call.data]);
         } else {
             toast.error(call.message);
@@ -114,7 +115,7 @@ function LeadsList() {
             <TableHeaderContainer>
                 <TableCardHeader
                     main='Name'
-                    others={['Business', 'Status']}
+                    others={['City','Business', 'Status']}
                     isDownloadAvailable={false}
                 />
             </TableHeaderContainer>
@@ -137,7 +138,7 @@ function LeadsList() {
                         <TableCard
                             key={index}
                             main={lead.name}
-                            others={[lead.type, lead.status]}
+                            others={[lead.address.split(',')[2].trim().replace(/^\d{5}/, "") ,lead.type, lead.status]}
                             srcImg={'/icons/google.jpg'}
                             onClick={() => {
                                 toggleLeadModal(lead._id);
@@ -168,7 +169,7 @@ function LeadsList() {
                             <TableCard
                                 key={index}
                                 main={lead.name}
-                                others={[lead.type, lead.status]}
+                                others={[lead.address.split(',')[2].trim().replace(/^\d{5}/, "") ,lead.type, lead.status]}
                                 srcImg={'/icons/google.jpg'}
                                 onClick={() => {
                                     toggleLeadModal(lead._id);

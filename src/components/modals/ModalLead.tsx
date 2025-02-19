@@ -5,7 +5,7 @@ import { getLead, updateLeadEmail, updateLeadStatus } from '@/services/api'
 import toast from 'react-hot-toast'
 import CardAlert from '../cards/CardAlert'
 import ButtonLoading from '../buttons/ButtonLoading'
-import { Divide, Map, MapPin } from 'lucide-react'
+import { Divide, Map, MapPin, PhoneIcon } from 'lucide-react'
 import { on } from 'events'
 import Input from '../inputs/input'
 
@@ -100,8 +100,16 @@ function ModalLead({ isOpen, onClose, leadId }: ModalLeadProps) {
                 href={`https://www.google.com/maps/search/?q=${lead && lead.address},${lead && lead.name}`}
                 target='_blank'
             >
+                <span>Phone  </span><span className='flex flex-row gap-2'>{lead && lead.phone} <PhoneIcon width={18}/></span>
+            </a>
+            <a 
+                className='w-full flex justify-between'
+                href={`https://www.google.com/maps/search/?q=${lead && lead.address},${lead && lead.name}`}
+                target='_blank'
+            >
                 <span>Address  </span><span className='flex flex-row gap-2' style={{ color: '#007BFF'}}>{lead && lead.address} <MapPin width={18}/></span>
             </a>
+            
             <div className='w-full flex justify-between items-center'>
                 <span>Email</span>
                 <div className='w-[60%]'>
@@ -112,6 +120,7 @@ function ModalLead({ isOpen, onClose, leadId }: ModalLeadProps) {
                     />
                 </div>
             </div>
+            
             <ButtonLoading
                 text={'Update Email'}
                 backgroundColor='#007BFF'

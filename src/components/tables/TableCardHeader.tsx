@@ -18,7 +18,7 @@ function TableCardHeader({ main, others, isDownloadAvailable }: TableCardRowProp
             <div className='flex items-center justify-between gap-4'>
                 {
                     others.map((other, index) => (
-                        <p key={index} className='w-[100px]' style={{ fontSize: '13px' }}>{other}</p>
+                        <p key={index} className='w-[150px]' style={{ fontSize: '13px' }}>{other}</p>
                     ))
                 }
                 
